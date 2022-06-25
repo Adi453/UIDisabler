@@ -16,7 +16,7 @@ namespace UIDisabler
         public const string Name = "UIDisabler"; // Name of the Mod.  (MUST BE SET)
         public const string Author = "Adidasaurus"; // Author of the Mod.  (Set as null if none)
         public const string Company = null; // Company that made the Mod.  (Set as null if none)
-        public const string Version = "1.0.0"; // Version of the Mod.  (MUST BE SET)
+        public const string Version = "1.0.1"; // Version of the Mod.  (MUST BE SET)
         public const string DownloadLink = null; // Download Link for the Mod.  (Set as null if none)
     }
 
@@ -38,7 +38,7 @@ namespace UIDisabler
             Preferences.LoadPrefs();
             foreach(MethodInfo meth in typeof(InteractableIcon).GetMethods())
             {
-                if (meth.Name.Contains("My") && meth.Name.Contains("Hand") && meth.Name.Contains("Hover"))
+                if (meth.Name.Contains("HandHover"))
                     HarmonyInstance.Patch(meth, prefix: typeof(UIDisabler).GetMethod("Prefix").ToNewHarmonyMethod());
             }
                 
