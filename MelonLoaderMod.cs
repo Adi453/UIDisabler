@@ -107,7 +107,11 @@ namespace UIDisabler
                     r.enabled = !accesories;
             });
         }
-        public static void Prefix(InteractableIcon __instance) => __instance.IconSize = forcePull ? 0 : 0.015f;
+        public static void Prefix(InteractableIcon __instance)
+        {
+            if(__instance != null)
+                __instance.IconSize = forcePull ? 0 : 0.015f;
+        }
 
         [HarmonyPatch(typeof(Gun), "CoBlinkHighlight")]
         public static class GunPatch

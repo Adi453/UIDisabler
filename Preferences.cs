@@ -20,6 +20,7 @@ namespace UIDisabler
             forcePull = category.CreateEntry<bool>(For, forcePull, For).Value;
             ammoPouch = category.CreateEntry<bool>(BELT, ammoPouch, BELT).Value;
             holster = category.CreateEntry<bool>(Hol, holster, Hol).Value;
+            accesories = category.CreateEntry<bool>(Ran, accesories, Ran).Value;
         }
         public static void SavePrefs()
         {
@@ -28,6 +29,7 @@ namespace UIDisabler
             MelonPreferences.SetEntryValue<bool>(Dis, For, forcePull);
             MelonPreferences.SetEntryValue<bool>(Dis, BELT, ammoPouch);
             MelonPreferences.SetEntryValue<bool>(Dis, Hol, holster);
+            MelonPreferences.SetEntryValue<bool>(Dis, Ran, accesories);
             MelonPreferences.Save();
         }
     }
